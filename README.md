@@ -1,2 +1,7 @@
-# taman-surga
-Versi platform Mobile (Android) yang mengimplementasikan o-sunnahdb API - https://github.com/abudawud/o-sunnahdb
+# Taman-Taman Surga
+Aplikasi mobile untuk memudahkan panitia kajian dalam menginfokan kajian dan memudahkan para penuntut ilmu untuk mencari info kajian.
+
+# About
+Dikembangkan oleh Hafidz:
+* email: warishafidz@gmail.com
+* telegram: https://t.me/warishafidz
