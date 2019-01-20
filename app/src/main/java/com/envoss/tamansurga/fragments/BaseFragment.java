@@ -1,12 +1,15 @@
 package com.envoss.tamansurga.fragments;
 
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.envoss.tamansurga.R;
 
@@ -15,18 +18,40 @@ import com.envoss.tamansurga.R;
  */
 public class BaseFragment extends Fragment {
 
+    public static final String TAG = "X-LOG";
+    private static final boolean DEBUG_MODE = true;
 
-    public BaseFragment() {
-        // Required empty public constructor
+    public static void toastErr(Context context, String msg){
+        Toast.makeText(context, "Something Wrong, " + msg, Toast.LENGTH_SHORT).show();
     }
 
+    public static void toastInfo(Context context, String msg){
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        return textView;
+    public static class Baseprogress{
+        private static ProgressDialog mProgressDialog;
+
+        public static void showProgressDialog(Context context, String msg) {
+            if (mProgressDialog == null) {
+                mProgressDialog = new ProgressDialog(context);
+                mProgressDialog.setCancelable(false);
+            }
+
+            mProgressDialog.setMessage(msg);
+            mProgressDialog.show();
+        }
+
+        public static void setMessage(String msg){
+            mProgressDialog.setMessage(msg);
+        }
+
+        public static void hideProgressDialog() {
+            if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                mProgressDialog.dismiss();
+                mProgressDialog = null;
+            }
+        }
     }
 
 }
