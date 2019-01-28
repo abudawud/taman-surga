@@ -11,10 +11,11 @@
     <include layout="@layout/layout_header" />
 
     <TextView
+        android:id="@+id/tv_user_status"
         android:layout_marginBottom="@dimen/layout_spacing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Getting device identity and registering new user, you can change this username or leave it default"/>
+        android:text="Getting information..."/>
 
     <LinearLayout
         android:layout_margin="10dp"
@@ -40,6 +41,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/process"
         android:text="Continue"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"

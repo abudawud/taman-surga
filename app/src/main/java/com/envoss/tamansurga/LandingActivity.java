@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.envoss.tamansurga.helpers.UserPreference;
+
 public class LandingActivity extends BaseActivity {
     public static final String IDENTITY = "identity";
     private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
@@ -26,7 +28,15 @@ public class LandingActivity extends BaseActivity {
         //setGuestID();
         if(!checkPermission(Manifest.permission.INTERNET))
             requestPermission(Manifest.permission.INTERNET);
-        setSerial();
+
+        UserPreference userPreference = new UserPreference(this);
+        if(userPreference.getToken() != null){
+            Intent intent = new Intent(this, TamanSurgaActivity.class);
+            startActivity(intent);
+            finish();
+        }else {
+            setSerial();
+        }
     }
 
     public void guestLogin(View v){

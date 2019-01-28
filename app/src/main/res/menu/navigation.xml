@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_account_box"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/nav_place"
+        android:icon="@drawable/ic_place_black"
+        android:title="Place" />
+
+    <item
+        android:id="@+id/nav_speaker"
+        android:icon="@drawable/ic_record_voice_over"
+        android:title="Speaker" />
+
+</menu>
